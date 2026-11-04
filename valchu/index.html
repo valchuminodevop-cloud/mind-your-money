@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MIND YOUR MONEY</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">✳</span>
+                <h1>MIND YOUR<br><span>MONEY.</span></h1>
+            </div>
+
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <nav class="navigation">
+                <a href="#dashboard" class="nav-item active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#income" class="nav-item">
+                    <span>↗</span> Ingresos
+                </a>
+
+                <a href="#expenses" class="nav-item">
+                    <span>↙</span> Gastos
+                </a>
+
+                <a href="#savings" class="nav-item">
+                    <span>◎</span> Ahorros
+                </a>
+
+                <a href="#analytics" class="nav-item">
+                    <span>◉</span> Estadísticas
+                </a>
+
+                <a href="#ideas" class="nav-item">
+                    <span>✎</span> Ideas
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-note">
+                    <span>✦</span>
+                    <p>Small steps.<br>Big financial goals.</p>
+                </div>
+
+                <p class="sidebar-version">PERSONAL FINANCE SYSTEM / 2026</p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="dashboard">
+
+            <!-- HEADER -->
+            <header class="top-header">
+
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL FINANCE SPACE</p>
+                    <h2>Money overview<span>.</span></h2>
+                    <p class="header-description">
+                        Organizá tus finanzas. Entendé tus hábitos. Tomá mejores decisiones.
+                    </p>
+                </div>
+
+                <div class="month-selector">
+                    <span>◷</span>
+                    <input type="month" id="month-selector">
+                </div>
+
+            </header>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="summary-grid">
+
+                <article class="summary-card income-card">
+                    <div class="card-top">
+                        <span>INGRESOS TOTALES</span>
+                        <span class="card-icon">↗</span>
+                    </div>
+
+                    <h3 id="total-income">$ 0,00</h3>
+                    <p>Dinero recibido durante el mes</p>
+                </article>
+
+
+                <article class="summary-card expenses-card">
+                    <div class="card-top">
+                        <span>GASTOS TOTALES</span>
+                        <span class="card-icon">↙</span>
+                    </div>
+
+                    <h3 id="total-expenses">$ 0,00</h3>
+                    <p>Dinero utilizado durante el mes</p>
+                </article>
+
+
+                <article class="summary-card balance-card">
+                    <div class="card-top">
+                        <span>BALANCE DISPONIBLE</span>
+                        <span class="card-icon">◈</span>
+                    </div>
+
+                    <h3 id="total-balance">$ 0,00</h3>
+                    <p>Ingresos menos gastos</p>
+                </article>
+
+
+                <article class="summary-card savings-card">
+                    <div class="card-top">
+                        <span>AHORRO POTENCIAL</span>
+                        <span class="card-icon">✳</span>
+                    </div>
+
+                    <h3 id="potential-savings">$ 0,00</h3>
+                    <p>Gastos marcados como reducibles</p>
+                </article>
+
+            </section>
+
+
+            <!-- INCOME AND SAVINGS -->
+            <div class="two-column-layout">
+
+                <!-- INCOME -->
+                <section class="panel" id="income">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-tag">01 / MONEY IN</span>
+                            <h2>Ingresos</h2>
+                        </div>
+
+                        <span class="heading-icon">↗</span>
+                    </div>
+
+                    <p class="description">
+                        Registrá el dinero que recibís durante el mes.
+                    </p>
+
+                    <form id="income-form">
+
+                        <div class="form-group">
+                            <label for="salary">Ingreso principal</label>
+                            <input type="number" id="salary" min="0" step="0.01" placeholder="Ej: 500000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="extra-income">Ingresos adicionales</label>
+                            <input type="number" id="extra-income" min="0" step="0.01" placeholder="Ej: 50000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="other-income">Otros ingresos</label>
+                            <input type="number" id="other-income" min="0" step="0.01" placeholder="Ej: 20000">
+                        </div>
+
+                        <button type="submit" class="button-dark">
+                            GUARDAR INGRESOS ↗
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+                <!-- SAVINGS -->
+                <section class="panel" id="savings">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-tag">02 / FUTURE YOU</span>
+                            <h2>Objetivo de ahorro</h2>
+                        </div>
+
+                        <span class="heading-icon">◎</span>
+                    </div>
+
+                    <p class="description">
+                        Establecé cuánto querés ahorrar este mes.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="saving-goal">Meta mensual ($)</label>
+
+                        <input type="number" id="saving-goal" min="0" step="0.01" placeholder="Ej: 100000">
+                    </div>
+
+                    <div class="progress-section">
+
+                        <div class="progress-label">
+                            <span>PROGRESO DE TU META</span>
+                            <strong id="saving-percentage">0%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+
+                        <div class="progress-info">
+                            <strong id="saving-progress-text">$ 0,00</strong>
+                            <span>Balance positivo disponible</span>
+                        </div>
+
+                    </div>
+
+                    <p class="small-note">
+                        El progreso se calcula según tu balance positivo.
+                        No representa una transferencia real a una cuenta de ahorro.
+                    </p>
+
+                </section>
+
+            </div>
+
+
+            <!-- EXPENSES -->
+            <section class="panel expenses-panel" id="expenses">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">03 / MONEY OUT</span>
+                        <h2>Control de gastos</h2>
+                    </div>
+
+                    <span class="heading-icon">↙</span>
+
+                </div>
+
+                <p class="description">
+                    Registrá tus gastos y clasificá cuáles podrías reducir.
+                </p>
+
+
+                <!-- EXPENSE FORM -->
+                <form id="expense-form" class="expense-form">
+
+                    <div class="form-group">
+                        <label for="expense-name">Descripción</label>
+
+                        <input type="text" id="expense-name" placeholder="Ej: Supermercado" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="expense-amount">Importe ($)</label>
+
+                        <input type="number" id="expense-amount" min="0.01" step="0.01" placeholder="Ej: 25000" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="expense-category">Categoría</label>
+
+                        <select id="expense-category" required>
+                            <option value="Vivienda">Vivienda</option>
+                            <option value="Alimentación">Alimentación</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Entretenimiento">Entretenimiento</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="expense-type">Tipo de gasto</label>
+
+                        <select id="expense-type">
+                            <option value="Fijo">Fijo</option>
+                            <option value="Variable">Variable</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="expense-saving">¿Es reducible?</label>
+
+                        <select id="expense-saving">
+                            <option value="no">No</option>
+                            <option value="yes">Sí</option>
+                        </select>
+                    </div>
+
+
+                    <button type="submit" class="button-add">
+                        + AGREGAR GASTO
+                    </button>
+
+                </form>
+
+
+                <!-- EXPENSE TABLE -->
+                <div class="table-wrapper">
+
+                    <table class="expense-table">
+
+                        <thead>
+                            <tr>
+                                <th>DESCRIPCIÓN</th>
+                                <th>IMPORTE</th>
+                                <th>CATEGORÍA</th>
+                                <th>TIPO</th>
+                                <th>REDUCIBLE</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="expense-list">
+                            <!-- JavaScript agrega los gastos aquí -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYTICS -->
+            <section class="panel analytics-panel" id="analytics">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">04 / MONEY VISUALIZED</span>
+                        <h2>Distribución de gastos</h2>
+                    </div>
+
+                    <span class="heading-icon">📊</span>
+
+                </div>
+
+                <p class="description">
+                    Descubrí qué categorías consumen tus ingresos.
+                    Pasá el cursor sobre el gráfico para ver los detalles.
+                </p>
+
+
+                <div class="chart-layout">
+
+                    <div class="chart-container">
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+
+
+                    <div class="chart-description">
+
+                        <h3>WHERE DOES YOUR MONEY GO?</h3>
+
+                        <p>
+                            Analizá tus gastos por categoría y encontrá
+                            oportunidades para organizar mejor tu presupuesto.
+                        </p>
+
+                        <div class="chart-total">
+                            <span>TOTAL DE GASTOS</span>
+                            <strong id="chart-total">$ 0,00</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- IDEAS -->
+            <section class="panel ideas-panel" id="ideas">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">05 / THINK DIFFERENT</span>
+                        <h2>Money brainstorming</h2>
+                    </div>
+
+                    <span class="heading-icon">✎</span>
+
+                </div>
+
+                <p class="description">
+                    Un espacio para pensar, planificar y mejorar tus hábitos financieros.
+                </p>
+
+
+                <div class="sticky-notes">
+
+                    <article class="sticky-note note-yellow">
+                        <span>01 / REFLECT</span>
+                        <h3>¿Qué puedo mejorar?</h3>
+                        <p>
+                            Identificá los gastos que no son realmente necesarios.
+                        </p>
+                    </article>
+
+
+                    <article class="sticky-note note-pink">
+                        <span>02 / PLAN</span>
+                        <h3>Think ahead.</h3>
+                        <p>
+                            Planificá tus compras antes de gastar.
+                        </p>
+                    </article>
+
+
+                    <article class="sticky-note note-green">
+                        <span>03 / GROW</span>
+                        <h3>Small progress.</h3>
+                        <p>
+                            La constancia es más importante que la perfección.
+                        </p>
+                    </article>
+
+
+                    <article class="sticky-note note-blue">
+                        <span>04 / FOCUS</span>
+                        <h3>Stay intentional.</h3>
+                        <p>
+                            Cada decisión puede acercarte a tus objetivos.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECOMMENDATIONS -->
+            <section class="panel recommendations-panel">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">06 / SMART INSIGHTS</span>
+                        <h2>Recomendaciones</h2>
+                    </div>
+
+                    <span class="heading-icon">✦</span>
+
+                </div>
+
+                <p class="description">
+                    Sugerencias automáticas basadas en los datos que registraste.
+                </p>
+
+                <div class="recommendation-placeholder">
+                    <!-- JavaScript agrega las recomendaciones aquí -->
+                </div>
+
+                <p class="small-note">
+                    Estas recomendaciones son reglas automáticas de organización
+                    financiera, no asesoramiento financiero profesional.
+                </p>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <div>
+                    <strong>MIND YOUR MONEY.</strong>
+                    <span>PERSONAL FINANCE DASHBOARD</span>
+                </div>
+
+                <p>DESIGNED TO THINK. BUILT TO GROW. © 2026</p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- PERSONAL JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
